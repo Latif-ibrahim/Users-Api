@@ -1,8 +1,9 @@
+const res = require("express/lib/response")
 const users = require("../data/users")
 
 
-
-const getUsers = (req, res)=>{
+//get all users
+const getUsers = ()=>{
 res.status(200).json({success:true, data:users});
 }
 
@@ -20,11 +21,6 @@ if(!user){
     return res.status(400).json({success:false, message:"user not found"});
 }
     res.status(200).json({success:true, data: user});
-
-
-
 }
-
-
 
 module.exports = {getUsers, createUser, getUser}
